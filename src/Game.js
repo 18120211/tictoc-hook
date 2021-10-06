@@ -17,7 +17,6 @@ function Game() {
         if (value == null) {
             return null
         }
-        console.log(value)
         for (let i = 0; i < mLength; i++) {
             for (let j = 0; j < mLength; j++) {
                 let curVal = squares[i * mLength + j]
@@ -25,7 +24,6 @@ function Game() {
                     if (curVal === squares[(i + 1) * mLength + j] && curVal === squares[(i + 2) * mLength + j]
                         && curVal === squares[(i + 3) * mLength + j] && curVal === squares[(i + 4) * mLength + j]
                         && curVal === value) {
-                        console.log('1')
                         const res = {
                             winner: value,
                             winStreak: [i * mLength + j,
@@ -103,14 +101,14 @@ function Game() {
         const history = mHistory.slice(0, mStepNumber + 1)
         const current = history[history.length - 1]
         const squares = current.squares.slice()
-        // squares[i] = mXIsNext ? 'X' : 'O'
-        console.log(squares)
-        if (calculateWinner1(squares, squares[i]) || squares[i]) {
+
+        const value = !mXIsNext ? 'X': 'O'
+
+        console.log(squares);
+        if (calculateWinner1(squares, value) || squares[i]) {
+            console.log(calculateWinner1(squares, squares[i]))
             return
         }
-        // if (calculateWinner(squares) || squares[i]) {
-        //   return
-        // }
         squares[i] = mXIsNext ? 'X' : 'O'
         setHistory(history.concat([{
             squares: squares,
@@ -137,7 +135,6 @@ function Game() {
     }
     const history = mHistory
     const current = history[mStepNumber]
-    // const resultCaculateWinner = calculateWinner(current.squares);
     const resultCaculateWinner = calculateWinner1(current.squares, !mXIsNext ? 'X' : 'O');
     let winner = null;
     let winStreak = [];

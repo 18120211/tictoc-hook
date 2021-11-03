@@ -9,8 +9,8 @@ function Board(props) {
     for (let i = 0; i < props.length; i++) {
         let row = []
         for (let j = 0; j < props.length; j++) {
-            if (winStreak.length != 0) {
-                if (winStreak.indexOf(i * props.length + j) != -1) {
+            if (winStreak.length !== 0) {
+                if (winStreak.indexOf(i * props.length + j) !== -1) {
                     row.push(renderSquare(i * props.length + j, true))
                 }
                 else {

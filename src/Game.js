@@ -30,8 +30,7 @@ function Game() {
                             (i + 1) * mLength + j,
                             (i + 2) * mLength + j,
                             (i + 3) * mLength + j,
-                            (i + 4) * mLength + j
-                            ]
+                            (i + 4) * mLength + j]
                         }
                         return res
                     }
@@ -48,8 +47,7 @@ function Game() {
                             (i + 1) * mLength + j + 1,
                             (i + 2) * mLength + j + 2,
                             (i + 3) * mLength + j + 3,
-                            (i + 4) * mLength + j + 4
-                            ]
+                            (i + 4) * mLength + j + 4]
                         }
                         return res
                     }
